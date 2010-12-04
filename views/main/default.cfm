@@ -4,7 +4,7 @@
 <cfoutput>
 	<div class="maindefault">
 		<p>This is an example form that can be submitted via the fw1AjaxAdapter</p>
-		<form method="post" onsubmit="return fw1AjaxFormSubmit();">
+		<form method="post" onsubmit="return fw1AjaxFormSubmit( this );">
 			<input type="hidden" name="action" value="main.default" />
 			<dl>
 				<dt>Example Field One Input</dt>

@@ -14,18 +14,21 @@
 	limitations under the License.
 */
 
+// This variable should be changed if you opt to locate the cfc in a different directory
+var fw1al = "/org/gregmoser/fw1AjaxAdapter.cfc";
+
 var fw1ar = 0;
 function fw1AjaxFormSubmit(oForm){
 	fw1ar = fw1ar + 1;
 	var fw1tr = fw1ar;
 	
-	var rds = '.svo' + oForm.elements["action"].value.replace(":","").replace(".","");
+	var rds = '.' + oForm.elements["action"].value.replace(":","").replace(".","");
 	
 	$.ajax({
 		type: "get",
-		url: "/org/gregmoser/fw1AjaxAdapter.cfc",
+		url: fw1al,
 		data: {
-			method: "slatFormSubmit",
+			method: "fw1AjaxFormSubmit",
 			argumentCollection: JSON.stringify($(oForm).serializeObject()),
 			returnFormat: "json"
 		},
